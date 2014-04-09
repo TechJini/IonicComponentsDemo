@@ -1,0 +1,32 @@
+<ion-view title="Checkbox">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" padding="true">
+		<div class="list">
+        
+	        <ion-checkbox ng-repeat="item in devList"
+	                      ng-model="item.checked" 
+	                      ng-checked="item.checked">
+	          {{ item.text }}
+	        </ion-checkbox>
+	       
+	        
+	        <ion-checkbox ng-model="pushNotification.checked"
+	                      ng-change="pushNotificationChange()">
+	        	Push Notifications
+	        </ion-checkbox>
+	     
+	        <ion-checkbox ng-model="emailNotification"
+	                      ng-true-value="Subscribed"
+	                      ng-false-value="Unubscribed">
+	        	Newsletter
+	        </ion-checkbox>
+	        
+	             
+      	</div>
+      	<button class="button" ng-click="display();" >
+			Submit
+	  	</button>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view title="Pull To Refresh">
+    <ion-content  has-tabs="true" has-header="true"  on-refresh="doRefresh()" padding="true">
+      <ion-refresher
+                     pulling-text="Pull to refresh..."
+                     on-refresh="doRefresh()"
+                     refreshing-icon="ion-loading-c"
+                     >
+                     
+      </ion-refresher>
+       <div class="list">
+        <div ng-repeat="item in items| filter: data.searchQuery" 
+           href="#"
+           class="item item-thumbnail-left">
+          <img class="listClassimg" ng-src="http://demos.telerik.com/kendo-ui/content/web/foods/{{item.ProductID}}.jpg">
+          <h3 class="listClassh3">{{ item.ProductName }}</h3>
+          <p class="listClassp">$ {{ item.UnitPrice }}</p>
+          <button class="button button-clear button-positive listClassbutton" ng-click='displayAlert("{{item.ProductName}}","{{item.UnitPrice}}")'>Click Me</button>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>
